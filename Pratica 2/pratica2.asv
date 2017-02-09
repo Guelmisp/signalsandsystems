@@ -1,0 +1,21 @@
+load melodia2.mat
+
+%sound(sinal,8000);
+%plot(sinal);
+
+N = 1900;
+Gfb = 0.5;
+Gff = 0.9;
+
+for n=1:20000
+    if (n-N) < 0
+        h(n) = 0;
+    
+    elseif (n-N) == 0
+        h(n) = Gfb*impulso(n) + (Gff - Gfb)*impulso(n-N);
+    elseif
+    if (n-N) > 0
+        h(n) = Gff*h(n-N);
+    end
+end
+
